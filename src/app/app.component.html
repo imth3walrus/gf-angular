@@ -1,0 +1,79 @@
+<!-- <div class="home-back"> -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Gaming<strong>Frog</strong></a>
+    </div>
+
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">About</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div *ngIf="user" class="navbar-right nav navbar-nav">
+        <li><a>Dashboard</a></li>
+        <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }} <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Billing</a></li>
+                <li><a (click)="logout()">Logout</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Support</li>
+                <li><a href="#">Disputes</a></li>
+                <li><a href="#">FAQS</a></li>
+              </ul>
+            </li>
+      </div>
+      <form *ngIf="!user" id="signin" class="navbar-form navbar-right" role="form">
+            <div class="input-group">
+                <input type="text" class="form-control sign-in" name='username' placeholder="Username" [(ngModel)]="loginInfo.username" id="the-username-input">
+            </div>
+
+            <div class="input-group">
+                <input class="form-control sign-in" type="password" name="password" placeholder="Password" [(ngModel)]="loginInfo.password" id="the-password-input">
+            </div>
+
+            <button class="btn btn-primary" (click)="login()">Login</button>
+            or
+            <!-- <a href="#"> -->
+            <button class="btn btn-primary">
+              <i class="fa fa-facebook"><span class="face-ra"> Sign in</span></i>
+            </button>
+            <!-- </a> -->
+       </form>
+
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- <app-home></app-home> -->
+
+
+<div class="navbar navbar-inverse navbar-fixed-bottom footer">
+  <div class="container-fluid">
+    <div class="col-xs-12 col-md-10 col-md-offset-2">
+    <div class="col-md-6">
+      <div class="row">
+        <h3>Yes we have an app!  <img src="./assets/img/app-store.png" width="200px"></h3>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+      <p class="copyright">All Rights Reserved © 2017 Gaming Frog</p>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>

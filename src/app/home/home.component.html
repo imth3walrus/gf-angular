@@ -1,0 +1,88 @@
+<div class="home-back">
+<div class="container-fluid">
+  <div class="row slider-container">
+    <div class="col-xs-12 col-md-10 col-md-offset-2">
+      <div class="col-md-6">
+        <span class="home-slider"> Win Cash<br> & Prizes<br> Playing Fifa 17 </span>
+        <br>
+        <a href="/sign-up" class="btn btn-default"><strong>Create an account now, it's free!</strong></a>
+        <br>
+        <iframe src="https://player.twitch.tv/?channel=gamingfrogapp" frameborder="0" allowfullscreen="true" scrolling="no" width="300" height="150" class="twitch-container"></iframe>
+        <a href="https://www.twitch.tv/gamingfrogapp?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:445px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch live video from GamingFrogApp on www.twitch.tv</a>
+      </div>
+      <div class="col-md-6">
+        <iframe src="https://www.twitch.tv/castro_1021/chat?popout=" frameborder="0" scrolling="no" height="500" width="350"></iframe>
+      </div>
+
+      <div *ngIf="user">
+        <h2> You are now logged in as {{ user.username }}!! </h2>
+        <p> Here's the user object </p>
+        <pre> {{ user | json }} </pre>
+
+        <p *ngIf="privateData"> Here's some data fetched from a protected API </p>
+        <pre> {{ privateData | json }} </pre>
+        <button (click)="logout()"> logout </button>
+        <button (click)="getPrivateData()"> Get private data </button>
+      </div>
+
+      <p class="error"> {{ error }} </p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container-fluid">
+    <div class="col-xs-12 col-md-10 col-md-offset-2">
+      <div class="row banner-one">
+        <span class="banner-font">1 vs 1 Matches</span><br>
+        <span class="sub-banner"> Challenge or invite players to play a direct match.</span>
+      </div>
+      <div class="row banner-two">
+        <span class="banner-font">Tournaments</span><br>
+        <span class="sub-banner"> Create or join tournaments to beat them all!</span>
+      </div>
+      <div class="row banner-three">
+        <span class="banner-font">Leaderboard</span><br>
+        <span class="sub-banner"> There is only one place at the top will it be yours?</span>
+      </div>
+      <div class="row banner-four">
+        <span class="banner-font">Playstation and Xbox</span><br>
+        <span class="sub-banner"> Choose your favorite console.</span>
+      </div>
+      <div class="row faq-home">
+        <div class="col-md-6">
+          <h1>What is Gaming Frog?</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="col-md-6">
+          <h1>Your Money on Gaming Frog?</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+      <div class="row center-home">
+        <h1>Are you picky and have more questions?</h1>
+      </div>
+      <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  </div>
+</div>
