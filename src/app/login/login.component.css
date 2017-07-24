@@ -24,7 +24,7 @@ p{
 .login-form {
    background-color: rgba(0, 0, 0, 0.5);
    width:380px;
-   margin: 5% auto;
+   margin: 10% auto;
    padding: 20px;
 }
 
@@ -61,5 +61,5 @@ p{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-i{margin-right: 4%;color:#555555}
-a{text-decoration: none;color:#555555;}
+i{margin-right: 4%;color:#36CE92}
+a{text-decoration: none;color:#36CE92;}

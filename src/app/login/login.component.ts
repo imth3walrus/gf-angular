@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.mySession.isLoggedIn()
     .then(userInfo => {
-      this.routerThang.navigate(['/app']);
+      // this.routerThang.navigate(['/app']);
+      window.location.href = '/app';
     });
   }
 
@@ -31,7 +32,8 @@ export class LoginComponent implements OnInit {
     thePromise.then((userInfo) => {
       this.user = userInfo;
       this.error = null;
-      this.routerThang.navigate(['/app']);
+      // this.routerThang.navigate('/app');
+      window.location.href = '/app';
     });
 
     thePromise.catch((err) => {

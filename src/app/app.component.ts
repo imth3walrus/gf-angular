@@ -67,6 +67,7 @@ export class AppComponent implements OnInit {
       .then(() => {
         this.user = null;
         this.error = null;
+        this.routerThang.navigate(['/']);
       })
       .catch(err => this.error = err);
   }
