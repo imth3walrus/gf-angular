@@ -1,0 +1,39 @@
+.dashboard-wrapper {
+  height: 100%;
+  width: 100%;
+  margin-top: -5%;
+  background-color: #060F1B;
+  overflow: hidden;
+}
+
+.dashboard-menu {
+  margin-top: 45px;
+  margin-left: -15px;
+  padding-top: 10%;
+  height: 100vh;
+  background-color: #0D1E36;
+}
+
+.dashboard-chat {
+  margin-top: 45px;
+  margin-left: 1%;
+  padding-top: 20px;
+  height: 100vh;
+  background-color: #0D1E36;
+  overflow: scroll;
+}
+
+.dashboard-chat::-webkit-scrollbar {
+    display: none;
+}
+
+.dashboard-games {
+  margin-top: 45px;
+  padding-top: 20px;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.dashboard-games::-webkit-scrollbar {
+    display: none;
+}

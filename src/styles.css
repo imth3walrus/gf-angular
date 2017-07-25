@@ -13,6 +13,24 @@ h1, h2, h3, h4, h5 {
 a{
   cursor: pointer;
 }
+::-webkit-scrollbar{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track-piece{
+	background-color: #DFE1E0;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #CBCBCB;
+	outline: 1px solid #FFF;
+	outline-offset: -1px;
+	border: .1px solid #B7B7B7;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #909090;
+}
 
 .navbar-brand {
   font-family: 'Rajdhani', sans-serif;

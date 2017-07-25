@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
     .catch((errResponse) => {
       const apiInfo = errResponse.json();
       this.error = apiInfo.message;
-      this.routerThang.navigate(['/login']);
+      // this.routerThang.navigate(['/login']);
     });
   }
 
