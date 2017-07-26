@@ -1,25 +1,88 @@
 <div class="dashboard-wrapper">
   <div class="container-fluid">
     <div class="col-md-1 dashboard-menu">
-      HELLO
+      <a data-toggle="modal" data-target="#myModal">
+        <img src="../assets/img/in_game.png" title="Create a Game">
+      </a>
+      <br>
+      <img src="../assets/img/dashboard.png" title="Dashboard">
+      <br>
+      <img src="../assets/img/custom.png" title="Billing">
+      <br>
+      <img src="../assets/img/disputes.png" title="Disputes">
+      <br>
+      <img src="../assets/img/contact.png" title="Messages">
+      <br>
+      <a href="https://help.gamingfrog.com/" target="_blank">
+        <img src="../assets/img/faqs.png" title="Support">
+      </a>
     </div>
     <div class="col-md-6 dashboard-games">
-      <div class="row">
-        <div class="col-sm-3">
-          All Matches
-        </div>
-        <div class="col-sm-3">
-          My Games
-        </div>
-        <div class="col-sm-3">
-          Tournaments
-        </div>
-        <div class="col-sm-3">
-          Leaderboards
-        </div>
-      </div>
+      <router-outlet></router-outlet>
     </div>
     <div class="col-md-5 dashboard-chat">
     </div>
+  </div>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create a Game</h4>
+      </div>
+      <div class="modal-body">
+        <form *ngIf="!user" id="match-form">
+
+              <div class="form-group signup">
+                <label for="the-firstname-signup"> First Name </label>
+                <input type="text" name="firstname" placeholder="Jhon" class="form-control signup" required [(ngModel)]="signupInfo.firstname" id="the-firstname-signup">
+              </div>
+
+              <div class="form-group signup">
+                <label for="the-lastname-signup"> Last Name </label>
+                <input type="text" name="lastname" placeholder="Doe" class="form-control signup" required [(ngModel)]="signupInfo.lastname" id="the-lastname-signup">
+              </div>
+
+              <div class="form-group signup">
+                <label for="age-input"> Age </label>
+                <input  type="number" name="reviewStars" class="form-control" min="21" max="99" placeholder="21" required [(ngModel)]="signupInfo.age" id="the-age-signup">
+              </div>
+
+              <div class="form-group signup">
+                <label for="the-xboxgamertag-signup"> Xbox Gamertag </label>
+                <input type="text" name="username" placeholder="JHONDOE13" class="form-control signup" [(ngModel)]="signupInfo.xboxgamertag" id="the-xbox-gamertag-signup">
+              </div>
+
+              <div class="form-group signup">
+                <label for="the-psnid-signup"> PSN ID </label>
+                <input type="text" name="username" placeholder="JHONDONUTS" class="form-control signup" [(ngModel)]="signupInfo.psnid" id="the-psnid-signup">
+              </div>
+
+              <div class="form-group signup">
+                <label for="the-username-signup"> Username </label>
+                <input type="text" name="username" placeholder="Username" class="form-control signup" minlength=5 required [(ngModel)]="signupInfo.username" id="the-username-signup">
+              </div>
+
+              <div class="form-group signup">
+                <label for="the-email-signup"> Email </label>
+                <input type="email" name="username" placeholder="jhondoe@xyz.com" class="form-control signup" required [(ngModel)]="signupInfo.email" id="the-email-signup">
+              </div>
+
+              <div class="form-group signup">
+                <label for="the-password-signup"> Password </label>
+                <input type="password" name="password" placeholder="Password" class="form-control signup" minlength=5 required [(ngModel)]="signupInfo.password" id="the-password-signup">
+              </div>
+              <!-- <div class="modal-footer"> -->
+                <button class="btn btn-primary" (click)="createGame()">Create</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <!-- </div> -->
+        </form>
+      </div>
+    </div>
+
   </div>
 </div>

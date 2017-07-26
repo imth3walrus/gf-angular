@@ -10,6 +10,9 @@ h1, h2, h3, h4, h5 {
   font-family: 'Rajdhani', sans-serif;
   font-weight: bold;
 }
+a:hover{
+  color: #36CE92;
+}
 a{
   cursor: pointer;
 }
@@ -204,6 +207,12 @@ a{
   color: #fff!important;
 }
 
+hr{
+  border-top: dotted 2px #444;
+  max-width: 500px;
+  align-self: center;
+}
+
 .fa{
   font-size: 17px;
   text-align: center;
@@ -213,7 +222,29 @@ a{
   font-size: 14px;
   padding-top: 25px;
 }
+.matches-wrap{
+  padding: 0 30px 0 30px;
+  text-align: center;
+
+}
+.match-pic{
+  margin-top: -5px;
+}
+.user-match{
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+.user-level{
+  font-size: 15px;
+  color: #36CE92;
+}
 .face-ra{
   font-family: 'Rajdhani', sans-serif;
   font-size: 14px;
+}
+.active{
+  color: #36CE92!important;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #36CE92;
 }

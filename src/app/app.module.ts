@@ -12,6 +12,10 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import { CookieModule } from 'ngx-cookie';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { MatchesComponent } from './matches/matches.component';
+import { MymatchesComponent } from './mymatches/mymatches.component';
+import { TournamentsComponent } from './tournaments/tournaments.component';
+import { LeaderboardsComponent } from './leaderboards/leaderboards.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     FileSelectDirective,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    MatchesComponent,
+    MymatchesComponent,
+    TournamentsComponent,
+    LeaderboardsComponent
   ],
   imports: [
     BrowserModule,

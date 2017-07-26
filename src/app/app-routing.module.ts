@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { MatchesComponent } from './matches/matches.component';
 
 const defaultRoutes: Routes = [
-  // { path: 'dashboard', component: PageDashboardComponent },
+  { path: '', redirectTo: 'matches', pathMatch: 'full' },
+  { path: 'matches', component: MatchesComponent },
 ]
 
 const routes: Routes = [
