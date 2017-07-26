@@ -16,6 +16,9 @@ import { MatchesComponent } from './matches/matches.component';
 import { MymatchesComponent } from './mymatches/mymatches.component';
 import { TournamentsComponent } from './tournaments/tournaments.component';
 import { LeaderboardsComponent } from './leaderboards/leaderboards.component';
+import { BillingComponent } from './billing/billing.component';
+import { DisputesComponent } from './disputes/disputes.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { LeaderboardsComponent } from './leaderboards/leaderboards.component';
     MatchesComponent,
     MymatchesComponent,
     TournamentsComponent,
-    LeaderboardsComponent
+    LeaderboardsComponent,
+    BillingComponent,
+    DisputesComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
