@@ -62,4 +62,14 @@ export class SessionService {
       .then(result => result.json());
   }
 
+  newMatch (match) {
+    const theOriginalPromise = this.myHttp.post('http://localhost:3000/api/match', match, {withCredentials: true}).toPromise();
+
+    const theParsedPromise = theOriginalPromise.then((result) => {
+      return result.json();
+    });
+
+    return theParsedPromise;
+  }
+
 }

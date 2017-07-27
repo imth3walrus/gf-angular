@@ -38,23 +38,35 @@
         <form *ngIf="!user" id="match-form">
 
               <div class="form-group signup">
-                <label for="the-firstname-signup"> First Name </label>
-                <input type="text" name="firstname" placeholder="Jhon" class="form-control signup" required [(ngModel)]="signupInfo.firstname" id="the-firstname-signup">
+                <label for="the-halflength-newmatch"> Half Length (min) </label>
+                <input type="number" name="halflength" value="5" min="5" max="10" class="form-control signup" required [(ngModel)]="matchInfo.halflenght" id="the-halflength-newmatch">
               </div>
 
               <div class="form-group signup">
-                <label for="the-lastname-signup"> Last Name </label>
-                <input type="text" name="lastname" placeholder="Doe" class="form-control signup" required [(ngModel)]="signupInfo.lastname" id="the-lastname-signup">
+                <label for="the-teams-newmatch"> Teams </label>
+                <select class="form-control signup" required [(ngModel)]="matchInfo.teams" id="the-teams-newmatch">
+                  <option>any</option>
+                  <option>club</option>
+                  <option>women</option>
+                  <option>national</option>
+                </select>
               </div>
 
               <div class="form-group signup">
-                <label for="age-input"> Age </label>
-                <input  type="number" name="reviewStars" class="form-control" min="21" max="99" placeholder="21" required [(ngModel)]="signupInfo.age" id="the-age-signup">
+                <label for="the-teamlevel-newmatch"> Teams Level (stars) </label>
+                <select class="form-control signup" required [(ngModel)]="matchInfo.teamlevel" id="the-teamlevel-newmatch">
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                </select>
               </div>
 
               <div class="form-group signup">
-                <label for="the-xboxgamertag-signup"> Xbox Gamertag </label>
-                <input type="text" name="username" placeholder="JHONDOE13" class="form-control signup" [(ngModel)]="signupInfo.xboxgamertag" id="the-xbox-gamertag-signup">
+                <label for="the-console-newmatch"> Console </label>
+                <select class="form-control signup" required [(ngModel)]="matchInfo.console" id="the-console-newmatch">
+                  <option>xbox one</option>
+                  <option>ps4</option>
+                </select>
               </div>
 
               <div class="form-group signup">
@@ -62,22 +74,8 @@
                 <input type="text" name="username" placeholder="JHONDONUTS" class="form-control signup" [(ngModel)]="signupInfo.psnid" id="the-psnid-signup">
               </div>
 
-              <div class="form-group signup">
-                <label for="the-username-signup"> Username </label>
-                <input type="text" name="username" placeholder="Username" class="form-control signup" minlength=5 required [(ngModel)]="signupInfo.username" id="the-username-signup">
-              </div>
-
-              <div class="form-group signup">
-                <label for="the-email-signup"> Email </label>
-                <input type="email" name="username" placeholder="jhondoe@xyz.com" class="form-control signup" required [(ngModel)]="signupInfo.email" id="the-email-signup">
-              </div>
-
-              <div class="form-group signup">
-                <label for="the-password-signup"> Password </label>
-                <input type="password" name="password" placeholder="Password" class="form-control signup" minlength=5 required [(ngModel)]="signupInfo.password" id="the-password-signup">
-              </div>
               <!-- <div class="modal-footer"> -->
-                <button class="btn btn-primary" (click)="createGame()">Create</button>
+                <button class="btn btn-primary" (click)="newMatch()">Create</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <!-- </div> -->
         </form>

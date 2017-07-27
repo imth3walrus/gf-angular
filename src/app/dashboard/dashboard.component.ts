@@ -13,6 +13,9 @@ export class DashboardComponent implements OnInit {
 
   user: {};
   error: string;
+  matchInfo: {};
+  match: any;
+
 
   constructor(private mySession: SessionService, private routerThang: Router) { }
 
@@ -26,6 +29,20 @@ export class DashboardComponent implements OnInit {
       const apiInfo = errResponse.json();
       this.error = apiInfo.message;
       // this.routerThang.navigate(['/login']);
+    });
+  }
+
+  newMatch() {
+    const thePromise = this.mySession.newMatch(this.matchInfo);
+
+    thePromise.then((matchInfo) => {
+      this.match = matchInfo;
+      this.error = null;
+    });
+
+    thePromise.catch((err) => {
+      this.user = null;
+      this.error = err;
     });
   }
 
