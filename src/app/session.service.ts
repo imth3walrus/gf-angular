@@ -72,4 +72,10 @@ export class SessionService {
     return theParsedPromise;
   }
 
+  get(id) {
+    return this.myHttp.get(`http://localhost:3000/api/match/${id}`)
+      .toPromise()
+      .then(result => result.json())
+  }
+
 }

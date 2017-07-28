@@ -19,6 +19,7 @@ import { LeaderboardsComponent } from './leaderboards/leaderboards.component';
 import { BillingComponent } from './billing/billing.component';
 import { DisputesComponent } from './disputes/disputes.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MessagesComponent } from './messages/messages.component';
     LeaderboardsComponent,
     BillingComponent,
     DisputesComponent,
-    MessagesComponent
+    MessagesComponent,
+    MatchdetailsComponent
   ],
   imports: [
     BrowserModule,
