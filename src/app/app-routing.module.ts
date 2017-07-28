@@ -12,6 +12,7 @@ import { LeaderboardsComponent } from './leaderboards/leaderboards.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MymatchesComponent } from './mymatches/mymatches.component';
 import { TournamentsComponent } from './tournaments/tournaments.component';
+import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
 
 const defaultRoutes: Routes = [
   { path: '', redirectTo: 'matches', pathMatch: 'full' },
@@ -21,7 +22,8 @@ const defaultRoutes: Routes = [
   { path: 'leaderboards', component: LeaderboardsComponent },
   { path: 'billing', component: BillingComponent },
   { path: 'disputes', component: DisputesComponent },
-  { path: 'messages', component: MessagesComponent }
+  { path: 'messages', component: MessagesComponent },
+  { path: 'matches/:id', component: MatchdetailsComponent },
 ]
 
 const routes: Routes = [
