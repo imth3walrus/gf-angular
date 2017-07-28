@@ -248,3 +248,7 @@ hr{
   text-decoration-style: solid;
   text-decoration-color: #36CE92;
 }
+.center-wrap{
+  display: block;
+  margin: 0 auto;
+}

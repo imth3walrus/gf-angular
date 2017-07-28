@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
 
   user: {};
   error: string;
-  matchInfo: {};
+  matchInfo = {};
   match: any;
 
 
@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
     .catch((errResponse) => {
       const apiInfo = errResponse.json();
       this.error = apiInfo.message;
-      // this.routerThang.navigate(['/login']);
+      this.routerThang.navigate(['/login']);
     });
   }
 
@@ -38,6 +38,8 @@ export class DashboardComponent implements OnInit {
     thePromise.then((matchInfo) => {
       this.match = matchInfo;
       this.error = null;
+      document.getElementById("closeMatchModal").click();
+      document.getElementById("openModalButton").click();
     });
 
     thePromise.catch((err) => {

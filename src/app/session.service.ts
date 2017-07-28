@@ -56,8 +56,8 @@ export class SessionService {
       .then(result => result.json());
   }
 
-  getPrivate () {
-    return this.myHttp.get('http://localhost:3000/api/private', {withCredentials: true})
+  getMatches () {
+    return this.myHttp.get('http://localhost:3000/api/matches', {withCredentials: true})
       .toPromise()
       .then(result => result.json());
   }

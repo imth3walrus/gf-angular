@@ -72,12 +72,12 @@ export class AppComponent implements OnInit {
       .catch(err => this.error = err);
   }
 
-  getPrivateData() {
-    this.mySession.getPrivate()
-      .then((data) => {
-        this.myData = data;
-        this.error = null;
-      })
-      .catch(err => this.error = err);
-  }
+  // getPrivateData() {
+  //   this.mySession.getPrivate()
+  //     .then((data) => {
+  //       this.myData = data;
+  //       this.error = null;
+  //     })
+  //     .catch(err => this.error = err);
+  // }
 }

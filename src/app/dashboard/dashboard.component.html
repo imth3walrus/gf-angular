@@ -24,6 +24,7 @@
     </div>
   </div>
 </div>
+<button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#matchConfirmation">Open Modal</button>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -35,16 +36,16 @@
         <h4 class="modal-title">Create a Game</h4>
       </div>
       <div class="modal-body">
-        <form *ngIf="!user" id="match-form">
+        <form *ngIf="user" id="match-form">
 
               <div class="form-group signup">
                 <label for="the-halflength-newmatch"> Half Length (min) </label>
-                <input type="number" name="halflength" value="5" min="5" max="10" class="form-control signup" required [(ngModel)]="matchInfo.halflenght" id="the-halflength-newmatch">
+                <input type="number" name="halflength" value="5" min="5" max="10" class="form-control signup" required [(ngModel)]="matchInfo.halflength" id="the-halflength-newmatch">
               </div>
 
               <div class="form-group signup">
                 <label for="the-teams-newmatch"> Teams </label>
-                <select class="form-control signup" required [(ngModel)]="matchInfo.teams" id="the-teams-newmatch">
+                <select class="form-control signup" name="teams" value="any" required [(ngModel)]="matchInfo.teams" id="the-teams-newmatch">
                   <option>any</option>
                   <option>club</option>
                   <option>women</option>
@@ -54,7 +55,7 @@
 
               <div class="form-group signup">
                 <label for="the-teamlevel-newmatch"> Teams Level (stars) </label>
-                <select class="form-control signup" required [(ngModel)]="matchInfo.teamlevel" id="the-teamlevel-newmatch">
+                <select class="form-control signup" name="teamlevel" value="5" required [(ngModel)]="matchInfo.teamlevel" id="the-teamlevel-newmatch">
                   <option>5</option>
                   <option>4</option>
                   <option>3</option>
@@ -63,22 +64,48 @@
 
               <div class="form-group signup">
                 <label for="the-console-newmatch"> Console </label>
-                <select class="form-control signup" required [(ngModel)]="matchInfo.console" id="the-console-newmatch">
+                <select class="form-control signup" name="console" value="xbox one" required [(ngModel)]="matchInfo.console" id="the-console-newmatch">
                   <option>xbox one</option>
                   <option>ps4</option>
                 </select>
               </div>
 
               <div class="form-group signup">
-                <label for="the-psnid-signup"> PSN ID </label>
-                <input type="text" name="username" placeholder="JHONDONUTS" class="form-control signup" [(ngModel)]="signupInfo.psnid" id="the-psnid-signup">
+                <label for="the-bet-newmatch"> Bet ($) </label>
+                <input type="number" name="bet" value="5" min="5" max="100" class="form-control signup" [(ngModel)]="matchInfo.bet" id="the-bet-newmatch">
               </div>
 
               <!-- <div class="modal-footer"> -->
                 <button class="btn btn-primary" (click)="newMatch()">Create</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="closeMatchModal" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <!-- </div> -->
         </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="matchConfirmation" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <img src="../../assets/img/in_game.png" class="center-wrap">
+        <h1> Great you have created a match!</h1>
+        Now What?<br>
+          <ul>
+            <li>Your match will show in the "All Matches" section.</li>
+            <li>Users can join your match.</li>
+            <li>You will receive a notification once someone joins your match.</li>
+          </ul>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
 
