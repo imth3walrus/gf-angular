@@ -9,10 +9,10 @@ import { SessionService } from '../session.service';
 })
 export class MatchdetailsComponent implements OnInit {
 
-  singleMatch = {};
+  singleMatch : any;
   errorMessage: string = '';
   user: {};
-  resultInfo = {};
+  resultInfo : any;
 
   constructor(private mySession: SessionService, private routerThang: Router, private myRoute: ActivatedRoute) { }
 

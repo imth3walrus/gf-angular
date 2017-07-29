@@ -9,7 +9,7 @@ import { SessionService } from '../session.service';
 })
 export class ProfileComponent implements OnInit {
 
-  user: {};
+  user: any;
   error: string;
 
   constructor(private mySession: SessionService, private routerThang: Router) { }

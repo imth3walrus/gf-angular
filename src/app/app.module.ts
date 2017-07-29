@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FileSelectDirective } from 'ng2-file-upload';
+// import { FileSelectDirective } from 'ng2-file-upload';
 import { CookieModule } from 'ngx-cookie';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
@@ -21,13 +21,14 @@ import { DisputesComponent } from './disputes/disputes.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
     HomeComponent,
-    FileSelectDirective,
+    // FileSelectDirective,
     DashboardComponent,
     LoginComponent,
     MatchesComponent,
@@ -47,7 +48,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     CookieModule.forRoot(),
   ],
-  providers: [SessionService],
+  providers: [SessionService, {provide: LocationStrategy, useClass: HashLocationStrategy}], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

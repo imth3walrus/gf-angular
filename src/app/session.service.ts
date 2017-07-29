@@ -11,7 +11,7 @@ export class SessionService {
   constructor(private myHttp: Http, private cookieservice: CookieService) { }
 
   signup (user) {
-    const theOriginalPromise = this.myHttp.post('http://localhost:3000/api/signup', user, {withCredentials: true}).toPromise();
+    const theOriginalPromise = this.myHttp.post('https://gamingfrog-api.herokuapp.com/api/signup', user, {withCredentials: true}).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();
@@ -21,7 +21,7 @@ export class SessionService {
   }
 
   login (credentials) {
-    const theOriginalPromise = this.myHttp.post('http://localhost:3000/api/login', credentials, {withCredentials: true}).toPromise();
+    const theOriginalPromise = this.myHttp.post('https://gamingfrog-api.herokuapp.com/api/login', credentials, {withCredentials: true}).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       // window.location.href = "/sign-up"
@@ -32,7 +32,7 @@ export class SessionService {
   }
 
   facebookLogin () {
-    const theOriginalPromise = this.myHttp.post('http://localhost:3000/api/auth/facebook', {withCredentials: true}).toPromise();
+    const theOriginalPromise = this.myHttp.post('https://gamingfrog-api.herokuapp.com/api/auth/facebook', {withCredentials: true}).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();
@@ -43,7 +43,7 @@ export class SessionService {
 
   logout () {
 
-    return this.myHttp.post('http://localhost:3000/api/logout', {withCredentials: true})
+    return this.myHttp.post('https://gamingfrog-api.herokuapp.com/api/logout', {withCredentials: true})
       .toPromise()
       .then(result => {
         result.json()
@@ -51,19 +51,19 @@ export class SessionService {
   }
 
   isLoggedIn () {
-    return this.myHttp.get('http://localhost:3000/api/loggedin', {withCredentials: true})
+    return this.myHttp.get('https://gamingfrog-api.herokuapp.com/api/loggedin', {withCredentials: true})
       .toPromise()
       .then(result => result.json());
   }
 
   getMatches () {
-    return this.myHttp.get('http://localhost:3000/api/matches', {withCredentials: true})
+    return this.myHttp.get('https://gamingfrog-api.herokuapp.com/api/matches', {withCredentials: true})
       .toPromise()
       .then(result => result.json());
   }
 
   newMatch (match) {
-    const theOriginalPromise = this.myHttp.post('http://localhost:3000/api/match', match, {withCredentials: true}).toPromise();
+    const theOriginalPromise = this.myHttp.post('https://gamingfrog-api.herokuapp.com/api/match', match, {withCredentials: true}).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();
@@ -73,13 +73,13 @@ export class SessionService {
   }
 
   get(id) {
-    return this.myHttp.get(`http://localhost:3000/api/match/${id}`)
+    return this.myHttp.get(`https://gamingfrog-api.herokuapp.com/api/match/${id}`)
       .toPromise()
       .then(result => result.json())
   }
 
   joinMatch (id) {
-    const theOriginalPromise = this.myHttp.post(`http://localhost:3000/api/match/join/${id}`, id, {withCredentials: true}).toPromise();
+    const theOriginalPromise = this.myHttp.post(`https://gamingfrog-api.herokuapp.com/api/match/join/${id}`, id, {withCredentials: true}).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();
@@ -89,7 +89,7 @@ export class SessionService {
   }
 
   matchResult (id, results) {
-    const theOriginalPromise = this.myHttp.post(`http://localhost:3000/api/match/result/${id}`, results, {withCredentials: true}).toPromise();
+    const theOriginalPromise = this.myHttp.post(`https://gamingfrog-api.herokuapp.com/api/match/result/${id}`, results, {withCredentials: true}).toPromise();
 
     const theParsedPromise = theOriginalPromise.then((result) => {
       return result.json();
@@ -99,7 +99,7 @@ export class SessionService {
   }
 
   myMatches() {
-    return this.myHttp.get(`http://localhost:3000/api/my-matches`, {withCredentials: true})
+    return this.myHttp.get(`https://gamingfrog-api.herokuapp.com/api/my-matches`, {withCredentials: true})
       .toPromise()
       .then(result => result.json())
   }
