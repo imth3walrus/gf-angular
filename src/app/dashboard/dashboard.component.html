@@ -1,17 +1,25 @@
 <div class="dashboard-wrapper">
-  <div class="container-fluid">
+  <!-- <div class="container-fluid"> -->
     <div class="col-md-1 dashboard-menu">
       <a data-toggle="modal" data-target="#myModal">
         <img src="../assets/img/in_game.png" title="Create a Game">
       </a>
       <br>
-      <img src="../assets/img/dashboard.png" title="Dashboard">
+      <a [routerLink]="['matches']">
+        <img src="../assets/img/dashboard.png" title="Dashboard">
+      </a>
       <br>
-      <img src="../assets/img/custom.png" title="Billing">
+      <a [routerLink]="['billing']">
+        <img src="../assets/img/custom.png" title="Billing">
+      </a>
       <br>
-      <img src="../assets/img/disputes.png" title="Disputes">
+      <a [routerLink]="['disputes']">
+        <img src="../assets/img/disputes.png" title="Disputes">
+      </a>
       <br>
-      <img src="../assets/img/contact.png" title="Messages">
+      <a [routerLink]="['messages']">
+        <img src="../assets/img/contact.png" title="Messages">
+      </a>
       <br>
       <a href="https://help.gamingfrog.com/" target="_blank">
         <img src="../assets/img/faqs.png" title="Support">
@@ -21,8 +29,10 @@
       <router-outlet></router-outlet>
     </div>
     <div class="col-md-5 dashboard-chat">
+      <iframe src="https://player.twitch.tv/?video=v67169155&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="50%"></iframe>
+      <iframe src="https://player.twitch.tv/?video=v160001317&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="50%" width="100%"></iframe>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
 <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#matchConfirmation">Open Modal</button>
 <!-- Modal -->

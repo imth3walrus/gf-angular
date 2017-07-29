@@ -1,6 +1,6 @@
 <!-- <div class="home-back"> -->
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <!-- <div class="container-fluid"> -->
 
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -14,23 +14,27 @@
 
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" *ngIf="!user">
         <li><a href="#">About</a></li>
         <li><a href="#">FAQ</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
+      <ul class="nav navbar-nav funds-menu" *ngIf="user">
+        <li><img src="../assets/img/funds.png" class="img-circle" width="43px"> Funds: {{ user.funds }}</li>
+        <li><img src="../assets/img/gf.png" class="img-circle" width="43px"> Gaming Frog Coins: {{ user.funds }}</li>
+      </ul>
       <div *ngIf="user" class="navbar-right nav navbar-nav">
-        <li><a>Dashboard</a></li>
         <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user.username }} <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img [src]="'../assets' + user.pic_path" class="img-circle" width="30px">{{ user.username }} <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Billing</a></li>
+                <li><a [routerLink]="['/app/profile']">Profile</a></li>
+                <li><a [routerLink]="['/app/matches']">Dashboard</a></li>
+                <li><a [routerLink]="['/app/billing']">Billing</a></li>
                 <li><a (click)="logout()">Logout</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Support</li>
-                <li><a href="#">Disputes</a></li>
-                <li><a href="#">FAQS</a></li>
+                <li><a href="https://help.gamingfrog.com">Disputes</a></li>
+                <li><a href="https://help.gamingfrog.com">FAQS</a></li>
               </ul>
             </li>
       </div>
@@ -53,7 +57,7 @@
        </form>
 
     </div>
-  </div>
+  <!-- </div> -->
 </nav>
 
 <router-outlet></router-outlet>

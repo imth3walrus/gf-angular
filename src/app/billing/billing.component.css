@@ -1,0 +1,10 @@
+.billing-wrap{
+  padding: 50px;
+}
+
+.payment-method{
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #36CE92;
+  padding: 5px;
+}

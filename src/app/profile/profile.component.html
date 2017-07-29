@@ -1,0 +1,87 @@
+<div class="profile-wrap">
+  <div class="row">
+    <img [src]="'../../assets' + user.pic_path" class="img-circle center-wrap" width="100px"><br>
+    <h4 class="center-username">Username: {{ user.username }}</h4><hr>
+    <div class="col-sm-6">
+      First Name: {{ user.first_name }}<br>
+      Last Name: {{ user.last_name }}<br>
+      Age: {{ user.age }}<br>
+      Country: {{ user.country }}<br>
+      State: {{ user.state }}<br>
+      City: {{ user.city }}<br>
+    </div>
+    <div class="col-sm-6">
+      Preferred Console: {{ user.console }}<br>
+      Email: {{ user.email }}<br>
+      Gamertag: {{ user.xbox_gamertag }}<br>
+      PSN ID: {{ user.psn_id }}<br>
+      Level: {{ user.level }}
+    </div>
+  </div>
+  <div class="row">
+  <a data-toggle="modal" data-target="#editProfile" class="btn btn-default center-wrap button-edit"> Edit Profile </a>
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div id="editProfile" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit profile</h4>
+      </div>
+      <div class="modal-body">
+        <form *ngIf="user" id="edit-profile">
+
+              <div class="form-group">
+                <label for="the-firstname-signup"> First Name </label>
+                <input type="text" name="firstname" placeholder="Jhon" class="form-control signup" required  id="the-firstname-signup">
+              </div>
+
+              <div class="form-group">
+                <label for="the-lastname-signup"> Last Name </label>
+                <input type="text" name="lastname" placeholder="Doe" class="form-control signup" required id="the-lastname-signup">
+              </div>
+
+              <div class="form-group">
+                <label for="age-input"> Age </label>
+                <input  type="number" name="reviewStars" class="form-control" min="21" max="99" placeholder="21" required id="the-age-signup">
+              </div>
+
+              <div class="form-group">
+                <label for="the-xboxgamertag-signup"> Xbox Gamertag </label>
+                <input type="text" name="username" placeholder="JHONDOE13" class="form-control signup" id="the-xbox-gamertag-signup">
+              </div>
+
+              <div class="form-group">
+                <label for="the-psnid-signup"> PSN ID </label>
+                <input type="text" name="username" placeholder="JHONDONUTS" class="form-control signup" id="the-psnid-signup">
+              </div>
+
+              <div class="form-group">
+                <label for="the-username-signup"> Username </label>
+                <input type="text" name="username" placeholder="Username" class="form-control signup" minlength=5 required id="the-username-signup">
+              </div>
+
+              <div class="form-group">
+                <label for="the-email-signup"> Email </label>
+                <input type="email" name="username" placeholder="jhondoe@xyz.com" class="form-control signup" required id="the-email-signup">
+              </div>
+
+              <div class="form-group">
+                <label for="the-password-signup"> Password </label>
+                <input type="password" name="password" placeholder="Password" class="form-control signup" minlength=5 required id="the-password-signup">
+              </div>
+
+              <button class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </form>
+      </div>
+    </div>
+
+  </div>
+</div>

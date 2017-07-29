@@ -1,0 +1,14 @@
+.profile-wrap{
+  padding: 50px;
+}
+.center-username{
+  text-align: center;
+  margin-top: -15px;
+}
+.modal{
+  color: #000!important;
+}
+
+.button-edit{
+  margin-top: 20px;
+}

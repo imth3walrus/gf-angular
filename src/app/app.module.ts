@@ -20,6 +20,7 @@ import { BillingComponent } from './billing/billing.component';
 import { DisputesComponent } from './disputes/disputes.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatchdetailsComponent } from './matchdetails/matchdetails.component';
     BillingComponent,
     DisputesComponent,
     MessagesComponent,
-    MatchdetailsComponent
+    MatchdetailsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
