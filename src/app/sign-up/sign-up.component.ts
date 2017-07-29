@@ -27,7 +27,7 @@ export class SignUpComponent implements OnInit {
     thePromise.then((userInfo) => {
       this.user = userInfo;
       this.error = null;
-      window.location.href = '/app';
+      window.location.href = '/#/app';
     });
 
     thePromise.catch((err) => {

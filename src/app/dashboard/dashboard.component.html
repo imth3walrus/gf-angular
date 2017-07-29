@@ -1,34 +1,34 @@
 <div class="dashboard-wrapper">
   <!-- <div class="container-fluid"> -->
-    <div class="col-md-1 dashboard-menu">
+    <div class="col-sm-1 dashboard-menu">
       <a data-toggle="modal" data-target="#myModal">
-        <img src="../assets/img/in_game.png" title="Create a Game">
+        <img src="../assets/img/in_game.png" class="center-wrap" title="Create a Game">
       </a>
       <br>
       <a [routerLink]="['matches']">
-        <img src="../assets/img/dashboard.png" title="Dashboard">
+        <img src="../assets/img/dashboard.png" title="Dashboard" class="center-wrap">
       </a>
       <br>
       <a [routerLink]="['billing']">
-        <img src="../assets/img/custom.png" title="Billing">
+        <img src="../assets/img/custom.png" title="Billing" class="center-wrap">
       </a>
       <br>
       <a [routerLink]="['disputes']">
-        <img src="../assets/img/disputes.png" title="Disputes">
+        <img src="../assets/img/disputes.png" title="Disputes" class="center-wrap">
       </a>
       <br>
       <a [routerLink]="['messages']">
-        <img src="../assets/img/contact.png" title="Messages">
+        <img src="../assets/img/contact.png" title="Messages" class="center-wrap">
       </a>
       <br>
       <a href="https://help.gamingfrog.com/" target="_blank">
-        <img src="../assets/img/faqs.png" title="Support">
+        <img src="../assets/img/faqs.png" title="Support" class="center-wrap">
       </a>
     </div>
-    <div class="col-md-6 dashboard-games">
+    <div class="col-sm-6 dashboard-games">
       <router-outlet></router-outlet>
     </div>
-    <div class="col-md-5 dashboard-chat">
+    <div class="col-sm-5 dashboard-chat">
       <iframe src="https://player.twitch.tv/?video=v67169155&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="50%"></iframe>
       <iframe src="https://player.twitch.tv/?video=v160001317&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="50%" width="100%"></iframe>
     </div>

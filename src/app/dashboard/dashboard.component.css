@@ -1,7 +1,7 @@
 .dashboard-wrapper {
   height: 100%;
   width: 100%;
-  margin-top: -2%;
+  margin-top: -1.5%;
   background-color: #060F1B;
   overflow: hidden;
 }
@@ -12,7 +12,7 @@
 
 .dashboard-menu {
   /*margin-top: 45px;*/
-  margin-left: -15px;
+  /*margin-left: -15px;*/
   padding-top: 3%;
   height: 100vh;
   background-color: #0D1E36;
@@ -20,7 +20,7 @@
 
 .dashboard-chat {
   /*margin-top: 45px;*/
-  margin-left: 1%;
+  /*margin-left: 1%;*/
   padding-top: 20px;
   height: 100vh;
   background-color: #0D1E36;

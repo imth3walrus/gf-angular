@@ -5,24 +5,13 @@
       <div class="col-md-6">
         <span class="home-slider"> Win Cash<br> & Prizes<br> Playing Fifa 17 </span>
         <br>
-        <a href="/sign-up" class="btn btn-default"><strong>Create an account now, it's free!</strong></a>
+        <a href="/#/sign-up" class="btn btn-default"><strong>Create an account now, it's free!</strong></a>
         <br>
         <iframe src="https://player.twitch.tv/?channel=gamingfrogapp" frameborder="0" allowfullscreen="true" scrolling="no" width="300" height="150" class="twitch-container"></iframe>
         <a href="https://www.twitch.tv/gamingfrogapp?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:445px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch live video from GamingFrogApp on www.twitch.tv</a>
       </div>
       <div class="col-md-6">
         <iframe src="https://www.twitch.tv/gamingfrogapp/chat?popout=" frameborder="0" scrolling="no" height="500" width="350"></iframe>
-      </div>
-
-      <div *ngIf="user">
-        <h2> You are now logged in as {{ user.username }}!! </h2>
-        <p> Here's the user object </p>
-        <pre> {{ user | json }} </pre>
-
-        <p *ngIf="privateData"> Here's some data fetched from a protected API </p>
-        <pre> {{ privateData | json }} </pre>
-        <button (click)="logout()"> logout </button>
-        <button (click)="getPrivateData()"> Get private data </button>
       </div>
 
       <p class="error"> {{ error }} </p>
