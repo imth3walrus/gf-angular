@@ -12,7 +12,7 @@ import { SessionService } from '../session.service';
 export class DashboardComponent implements OnInit {
 
   user: {};
-  error: string;
+  errorMessage: string;
   matchInfo = {};
   match: any;
 
@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
     })
     .catch((errResponse) => {
       const apiInfo = errResponse.json();
-      this.error = apiInfo.message;
+      this.errorMessage = apiInfo.message;
       this.routerThang.navigate(['/login']);
     });
   }
@@ -37,15 +37,18 @@ export class DashboardComponent implements OnInit {
 
     thePromise.then((matchInfo) => {
       this.match = matchInfo;
-      this.error = null;
       document.getElementById("closeMatchModal").click();
       document.getElementById("openModalButton").click();
     });
 
     thePromise.catch((err) => {
-      this.user = null;
-      this.error = err;
+      const apiInfo = err.json();
+      this.errorMessage = apiInfo.message;
     });
+  }
+
+  refreshPage() {
+    location.reload();
   }
 
 }

@@ -1,4 +1,125 @@
-<p>
-  matchdetails works!
-</p>
-{{ singleMatch.bet }}
+<i class="fa fa-long-arrow-left" aria-hidden="true"><a routerLink='/app/matches' class="user-level"> Back to Dashboard</a></i>
+<div class="match-details">
+  <div class="row matches-wrap">
+    <div class="col-sm-3">
+      <span class="user-match">{{ singleMatch.owner.username }}</span><br>
+      Level {{ singleMatch.owner.level }}
+    </div>
+    <div class="col-sm-2">
+      <img [src]="'../../assets' + singleMatch.owner.pic_path" class="img-circle match-pic" width="45px">
+    </div>
+    <div class="col-sm-2 vs-cont" *ngIf="singleMatch.match_status != 'completed'">
+      - VS -
+    </div>
+    <div class="col-sm-2 vs-cont" *ngIf="singleMatch.match_status == 'completed'">
+      {{ singleMatch.score_owner }} - {{ singleMatch.score_opponent }}
+    </div>
+    <div *ngIf="!singleMatch.opponent" class="col-sm-4">
+      <span class="user-match"> Waiting for Opponent </span>
+    </div>
+    <div *ngIf="singleMatch.opponent" class="col-sm-2">
+      <img [src]="'../../assets' + singleMatch.opponent.pic_path" class="img-circle match-pic" width="45px">
+    </div>
+    <div *ngIf="singleMatch.opponent" class="col-sm-3">
+      <span class="user-match">{{ singleMatch.opponent.username }}</span><br>
+      Level {{ singleMatch.opponent.level }}
+    </div>
+    <br>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Match Details:</h3>
+      Match Status: {{ singleMatch.match_status }} <br>
+      Console: {{ singleMatch.console }} <br>
+      Half Lenght(min): {{ singleMatch.half_length }} <br>
+      Teams: {{ singleMatch.teams }} <br>
+      Teams Level(Stars): {{ singleMatch.teams_level }} <br>
+      Fifa Version: {{ singleMatch.fifa_version }} <br>
+      Bet($): ${{ singleMatch.bet }}<br>
+    </div>
+    <div *ngIf="singleMatch.opponent">
+    <div *ngIf="user._id === singleMatch.owner._id || user._id === singleMatch.opponent._id" class="col-sm-6">
+      <div *ngIf="singleMatch.opponent">
+      <h3> User Info </h3>
+      {{ singleMatch.owner.username }} Gamertag: <br>
+      {{ singleMatch.opponent.username }} Gamertag:
+      </div>
+      <h3> Match Results </h3>
+      <div *ngIf="singleMatch.match_status == 'completed'" id="results">
+        Score for {{ singleMatch.owner.username }}: {{ singleMatch.score_owner }}<br>
+        Score for {{ singleMatch.opponent.username }}: {{ singleMatch.score_opponent }}
+      </div>
+      <form *ngIf="singleMatch.match_status != 'completed'" id="results" role="form">
+            <div class="input-group">
+              <label for="the-opponent-result"> Score for {{ singleMatch.owner.username }}  </label>
+              <input type="number" class="form-control" name='owner-result' min="0" [(ngModel)]="resultInfo.ownerResult" id="the-owner-result">
+            </div>
+
+            <div class="input-group">
+              <label for="the-opponent-result"> Score for {{ singleMatch.opponent.username }} </label>
+              <input type="number" class="form-control" name='opponent-result' min="0" [(ngModel)]="resultInfo.opponentResult" id="the-opponent-result">
+            </div>
+
+            <button class="btn btn-primary btn-result" (click)="matchResult()">Submit Results</button>
+       </form>
+    </div>
+  </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div *ngIf="errorMessage" class="error-match">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="!singleMatch.opponent" class="join-button">
+      <button class="btn btn-info" (click)="joinMatch()">Join Match</button>
+    </div>
+  </div>
+</div>
+<button id="joinModalButton" [hidden]="true" data-toggle="modal" data-target="#joinConfirmation">Open Modal</button>
+<button id="resultsModalButton" [hidden]="true" data-toggle="modal" data-target="#resultConfirmation">Open Modal</button>
+<!-- Modal -->
+<div id="joinConfirmation" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <img src="../../assets/img/in_game.png" class="center-wrap">
+        <h1> Great you have joined {{ singleMatch.owner.username }}'s match!</h1>
+        Now What?<br>
+          <ul>
+            <li>It's time to play your match!</li>
+            <li>Add your opponent on {{ singleMatch.console }}</li>
+            <li>Play your match and report results!</li>
+          </ul>
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="refreshPage()">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="resultConfirmation" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" (click)="refreshPage()">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <img src="../../assets/img/score.png" class="center-wrap">
+        <h1> RESULT ACCEPTED </h1>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="refreshPage()">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

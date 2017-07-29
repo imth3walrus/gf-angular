@@ -12,6 +12,9 @@
       Leaderboards
     </div>
 </div>
+<div *ngIf="errorMessage" class="error-match">
+  {{ errorMessage }}
+</div>
 <div class="matches-wrap">
   <div *ngFor="let oneMatch of matches">
   <div class="row">
@@ -23,8 +26,12 @@
     <div class="col-sm-2">
       <img [src]="'../../assets' + oneMatch.owner.pic_path" class="img-circle match-pic" width="45px">
     </div>
-    <div class="col-sm-4 vs-cont">
+    <div class="col-sm-4 vs-cont" *ngIf="oneMatch.match_status != 'completed'">
       - VS -<br> <a [routerLink]="[oneMatch._id]" class="user-level">See Challenge</a><br>
+      <span class="match-level">${{ oneMatch.bet }} | {{ oneMatch.console }} | {{ oneMatch.match_status }}</span>
+    </div>
+    <div class="col-sm-4 vs-cont" *ngIf="oneMatch.match_status == 'completed'">
+      {{ oneMatch.score_owner }} - {{ oneMatch.score_opponent }}<br> <a [routerLink]="[oneMatch._id]" class="user-level">See Challenge</a><br>
       <span class="match-level">${{ oneMatch.bet }} | {{ oneMatch.console }} | {{ oneMatch.match_status }}</span>
     </div>
     <div *ngIf="!oneMatch.opponent" class="col-sm-4">
@@ -32,11 +39,11 @@
       <a [routerLink]="[oneMatch._id]" class="btn btn-info">Join</a>
     </div>
     <div *ngIf="oneMatch.opponent" class="col-sm-2">
-      <img src="../../assets/img/profile-blank.png" class="img-circle match-pic" width="45px">
+      <img [src]="'../../assets' + oneMatch.opponent.pic_path" class="img-circle match-pic" width="45px">
     </div>
     <div *ngIf="oneMatch.opponent" class="col-sm-2">
-      <span class="user-match">Username2</span>
-      Lvl 15
+      <span class="user-match">{{ oneMatch.opponent.username }}</span>
+      Lvl {{ oneMatch.opponent.level }}
     </div>
   </div>
   </div>

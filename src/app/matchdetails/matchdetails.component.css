@@ -1,0 +1,21 @@
+.match-details{
+  padding: 6% 10% 6% 10%;
+}
+
+.join-button{
+  align-self: center;
+  text-align: center;
+}
+
+.btn-result{
+  margin-top: 10px;
+}
+
+.modal-content{
+  color: #000!important;
+}
+
+.error-match{
+  color: red;
+  text-align: center;
+}

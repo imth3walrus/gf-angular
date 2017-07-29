@@ -78,4 +78,29 @@ export class SessionService {
       .then(result => result.json())
   }
 
+  joinMatch (id) {
+    const theOriginalPromise = this.myHttp.post(`http://localhost:3000/api/match/join/${id}`, id, {withCredentials: true}).toPromise();
+
+    const theParsedPromise = theOriginalPromise.then((result) => {
+      return result.json();
+    });
+
+    return theParsedPromise;
+  }
+
+  matchResult (id, results) {
+    const theOriginalPromise = this.myHttp.post(`http://localhost:3000/api/match/result/${id}`, results, {withCredentials: true}).toPromise();
+
+    const theParsedPromise = theOriginalPromise.then((result) => {
+      return result.json();
+    });
+
+    return theParsedPromise;
+  }
+
+  myMatches() {
+    return this.myHttp.get(`http://localhost:3000/api/my-matches`, {withCredentials: true})
+      .toPromise()
+      .then(result => result.json())
+  }
 }
